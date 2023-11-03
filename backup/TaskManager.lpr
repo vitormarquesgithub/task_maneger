@@ -1,0 +1,32 @@
+program TaskManager;
+
+{$mode objfpc}{$H+}
+
+uses
+  {$IFDEF UNIX}
+  cthreads,
+  {$ENDIF}
+  {$IFDEF HASAMIGA}
+  athreads,
+  {$ENDIF}
+  Interfaces, // this includes the LCL widgetset
+  Forms,
+  TaskManagerForm
+  { you can add units after this };
+
+{$R *.res}
+
+procedure RemoveFocusOutline(Control: TWinControl);
+begin
+  Control.ControlStyle := Control.ControlStyle - [csFramed];
+end;
+
+begin
+  RequireDerivedFormResource:=True;
+  Application.Scaled:=True;
+  Application.Initialize;
+  Application.CreateForm(TTaskForm, TaskForm);
+  RemoveFocusOutline(chkTasks);
+  Application.Run;
+end.
+

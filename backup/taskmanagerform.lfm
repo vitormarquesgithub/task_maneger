@@ -1,0 +1,70 @@
+object TaskForm: TTaskForm
+  Left = 350
+  Height = 565
+  Top = 250
+  Width = 386
+  Caption = 'Task Maneger'
+  ClientHeight = 565
+  ClientWidth = 386
+  Constraints.MinHeight = 400
+  Constraints.MinWidth = 300
+  object pgcTabs: TPageControl
+    Left = -1
+    Height = 565
+    Top = 0
+    Width = 393
+    ActivePage = TabSheet1
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    TabIndex = 0
+    TabOrder = 0
+    object TabSheet1: TTabSheet
+      Caption = 'Tasks'
+      ClientHeight = 537
+      ClientWidth = 385
+      object edtTask: TEdit
+        AnchorSideBottom.Control = chkTasks
+        Left = 0
+        Height = 24
+        Top = 0
+        Width = 312
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        MaxLength = 50
+        OnKeyPress = edtTaskKeyPress
+        TabOrder = 0
+      end
+      object chkTasks: TCheckListBox
+        Left = 0
+        Height = 517
+        Top = 24
+        Width = 382
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        ItemHeight = 0
+        OnKeyDown = FormKeyDown
+        TabOrder = 1
+      end
+      object btnClearTasks: TButton
+        Left = 312
+        Height = 25
+        Top = 0
+        Width = 72
+        Anchors = [akTop, akRight]
+        Caption = 'Clear All'
+        OnClick = ClearTasks
+        TabOrder = 2
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = 'Notes'
+      ClientHeight = 537
+      ClientWidth = 385
+      object memoNotes: TMemo
+        Left = 0
+        Height = 538
+        Top = 0
+        Width = 383
+        Anchors = [akTop, akLeft, akRight, akBottom]
+        TabOrder = 0
+      end
+    end
+  end
+end

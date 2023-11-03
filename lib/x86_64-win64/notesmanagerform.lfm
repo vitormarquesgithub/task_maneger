@@ -1,0 +1,7 @@
+object NotesForm: TNotesForm
+  Left = 350
+  Height = 369
+  Top = 250
+  Width = 552
+  Caption = 'Notes'
+end

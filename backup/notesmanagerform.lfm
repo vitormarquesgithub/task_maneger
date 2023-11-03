@@ -1,0 +1,25 @@
+object NotesForm: TNotesForm
+  Left = 350
+  Height = 369
+  Top = 250
+  Width = 552
+  Caption = 'Notes'
+  ClientHeight = 369
+  ClientWidth = 552
+  object memoNotes: TMemo
+    Left = 176
+    Height = 178
+    Top = 80
+    Width = 184
+    TabOrder = 0
+  end
+  object btnClearNotes: TButton
+    Left = 285
+    Height = 25
+    Top = 280
+    Width = 75
+    Caption = 'btnClearNotes'
+    OnClick = ClearNotes
+    TabOrder = 1
+  end
+end
